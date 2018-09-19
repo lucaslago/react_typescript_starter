@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- node
+before_deploy:
+  - npm run build
+  - ls ./build
+deploy:
+  provider: s3
+  bucket: react-typescript-starter
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  access_key_id: $AWS_ACCESS_KEY_ID
+  skip_cleanup: true
+  acl: public_read
+  region: us-east-1
+  local_dir: ./build
+  on:
+    branch: master
