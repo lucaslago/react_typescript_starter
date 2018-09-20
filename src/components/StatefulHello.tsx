@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './StatefulHello.css';
 
 function getExclamationMarks ( numChars: number ) {
     return Array( numChars + 1 ).join( '!' );

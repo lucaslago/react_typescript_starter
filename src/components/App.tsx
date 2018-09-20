@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
+import Hello from './Hello';
 import logo from './logo.svg';
-import HelloStateful from './StatefulHello';
 
 class App extends React.Component {
   public render () {
@@ -11,7 +11,7 @@ class App extends React.Component {
           <img src={ logo } className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <HelloStateful name="Lucas" enthusiasmLevel={ 2 } />
+        <Hello name="Lucas" enthusiasmLevel={ 2 } />
       </div>
     );
   }
