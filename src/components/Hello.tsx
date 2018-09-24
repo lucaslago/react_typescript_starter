@@ -5,10 +5,12 @@ function getExclamationMarks ( numChars: number ) {
 }
 export interface IProps {
     name: string,
-    enthusiasmLevel?: number
+    enthusiasmLevel?: number,
+    onIncrement?: () => void,
+    onDecrement?: () => void
 };
 
-export default function Hello ( { name, enthusiasmLevel = 1 }: IProps ) {
+export default function Hello ( { name, enthusiasmLevel = 1, onIncrement, onDecrement }: IProps ) {
     if ( enthusiasmLevel <= 0 ) {
         throw new Error( 'You could be a little more enthusiastic. :bug:' );
     }
@@ -16,6 +18,10 @@ export default function Hello ( { name, enthusiasmLevel = 1 }: IProps ) {
         <div className="hello">
             <div className="greeting">
                 Hello { name + getExclamationMarks( enthusiasmLevel ) }
+            </div>
+            <div>
+                <button className="hello-increment" onClick={ onIncrement }>+</button>
+                <button className="hello-decrement" onClick={ onDecrement }>-</button>
             </div>
         </div>
     )
